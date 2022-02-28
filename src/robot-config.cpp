@@ -8,9 +8,14 @@ using code = vision::code;
 brain  Brain;
 
 // VEXcode device constructors
-motor LeftDriveSmart = motor(PORT1, ratio18_1, false);
-motor RightDriveSmart = motor(PORT10, ratio18_1, true);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 295, 40, mm, 1);
+servo PenServo = servo(Brain.ThreeWirePort.A);
+motor leftMotorA = motor(PORT9, ratio18_1, false);
+motor leftMotorB = motor(PORT14, ratio18_1, false);
+motor_group LeftDriveSmart = motor_group(leftMotorA, leftMotorB);
+motor rightMotorA = motor(PORT10, ratio18_1, true);
+motor rightMotorB = motor(PORT15, ratio18_1, true);
+motor_group RightDriveSmart = motor_group(rightMotorA, rightMotorB);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 319.19, 290, 250, mm, 1);
 
 // VEXcode generated functions
 

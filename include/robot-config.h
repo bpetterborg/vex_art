@@ -3,6 +3,7 @@ using namespace vex;
 extern brain Brain;
 
 // VEXcode devices
+extern servo PenServo;
 extern drivetrain Drivetrain;
 
 /**
